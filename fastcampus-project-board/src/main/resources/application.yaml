@@ -32,11 +32,3 @@ spring:
     init:
       mode: always
 
----
-spring:
-  config:
-    activate:
-      on-profile: testdb
-
-
-

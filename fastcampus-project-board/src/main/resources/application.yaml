@@ -12,9 +12,9 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:8080/board
-    username: junhee
-    password: thisisTESTpw!@#
+    url: jdbc:mysql://localhost:8090/board
+    username: jhk
+    password: tjmj367v
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     defer-datasource-initialization: true
@@ -25,7 +25,18 @@ spring:
       hibernate:
         format_sql: true
         default_batch_fetch_size: 100
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      mode: always
 
+---
+spring:
+  config:
+    activate:
+      on-profile: testdb
 
 
 

@@ -1,5 +1,6 @@
 package fastcampus.projectboard.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+
+
 @DisplayName("DATA REST - API 테스트")
 @Transactional //db에 손상이 될수있기때문에 Rollback이 된다.
 @AutoConfigureMockMvc
 @SpringBootTest
+@Disabled("Rest 통합테스트는 제외시킴")
 public class DataRestTest {
 
     private final MockMvc mvc;

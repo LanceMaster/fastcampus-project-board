@@ -6,7 +6,7 @@
     <title>게시글 페이지</title>
 </head>
 <body>
-<header id = "header"></header>
+<header id="header"></header>
 <!--타임리프 탬플릿이기 때문에 그냥 html로 하면 안보인다.-->
 <!--decoupled로 인하여 가능하게 되었다. config -> ThymeleafConfig 참고-->
 <!--tymeleaf templete에 th.xml를 추가하여 htmlmarkup 언어로 바꾸었다.-->
@@ -15,12 +15,14 @@
     <header>
         <h1>첫번째 글</h1>
     </header>
-<!--어사이드 시멘틱태그 사용-->
+    <!--어사이드 시멘틱태그 사용-->
 
     <aside>
         <p>Junhee</p>
         <p><a href="mailto:ukirrer@gmail.com">ukirrer@gmail.com</a></p>
-        <p><time datetime="2023-01-01T00:00:00">2023-01-01</time></p>
+        <p>
+            <time datetime="2023-01-01T00:00:00">2023-01-01</time>
+        </p>
         <p>#java</p>
     </aside>
 
@@ -29,36 +31,40 @@
         <div>
             <form>
                 <label for="articleComment" hidden>댓글</label>
-                <textarea id ="articleComment" placeholder="댓글 쓰기.."></textarea>
+                <textarea id="articleComment" placeholder="댓글 쓰기.."></textarea>
                 <button type="submit">쓰기</button>
 
             </form>
 
 
-        <ul>
-            <li>
-                <div>
-                    <time><small>2023-01-01</small></time>
-                    <strong>Junhee</strong>
-                    <p>
-                        Lorem Ipsum
-                        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-                    </p>
-                </div>
-             </li>
-            <li>
-                <div>
-                    <time><small>2023-02-01</small></time>
-                    <strong>Junhee2</strong>
-                    <p>
-                        Lorem Ipsum
-                        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-                    </p>
-                </div>
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <div>
+                        <time><small>2023-01-01</small></time>
+                        <strong>Junhee</strong>
+                        <p>
+                            Lorem Ipsum
+                            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                            velit..."
+                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
+                            because it is pain..."
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <time><small>2023-02-01</small></time>
+                        <strong>Junhee2</strong>
+                        <p>
+                            Lorem Ipsum
+                            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                            velit..."
+                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
+                            because it is pain..."
+                        </p>
+                    </div>
+                </li>
+            </ul>
         </div>
         <nav class="page-pagination" role="navigation"></nav>
         <a class="page-previous" href="#">이전 게시글</a>
@@ -66,6 +72,6 @@
     </section>
 
 </main>
-<footer id = "footer"></footer>
+<footer id="footer"></footer>
 </body>
 </html>

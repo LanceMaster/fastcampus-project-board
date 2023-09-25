@@ -6,62 +6,59 @@
     <title>게시판 페이지</title>
 </head>
 <body>
-<header id = "header"></header>
+<header id="header"></header>
 <!--타임리프 탬플릿이기 때문에 그냥 html로 하면 안보인다.-->
 <!--decoupled로 인하여 가능하게 되었다. config -> ThymeleafConfig 참고-->
 <!--tymeleaf templete에 th.xml를 추가하여 htmlmarkup 언어로 바꾸었다.-->
 
 
-
-
-
 <main>
     <form>
-    필터 : 제목 , 본문 ,id ,닉네임 ,해시태그
+        필터 : 제목 , 본문 ,id ,닉네임 ,해시태그
         <label for="search-type" hidden>유형</label>
-        <select id ="search-type" name ="search-type">
+        <select id="search-type" name="search-type">
             <option>제목</option>
             <option>본문</option>
             <option>ID</option>
             <option>닉네임</option>
             <option>해시태그</option>
         </select>
-        <label for = "search-value" hidden>검색어</label>
-            <input id ="search-value" type="search" placeholder="검색어..." name="search-value">
-            <button type="submit">검색</button>
+        <label for="search-value" hidden>검색어</label>
+        <input id="search-value" type="search" placeholder="검색어..." name="search-value">
+        <button type="submit">검색</button>
     </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>제목</th>
-                    <th>해시태그</th>
-                    <th>작성자</th>
-                    <th>작성일</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>첫글</td>
-                    <td>#java</td>
-                    <td>Jhkim</td>
-                    <td>2023-09-22</td>
+    <table>
+        <thead>
+        <tr>
+            <th>제목</th>
+            <th>해시태그</th>
+            <th>작성자</th>
+            <th>작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>첫글</td>
+            <td>#java</td>
+            <td>Jhkim</td>
+            <td>2023-09-22</td>
 
-                </tr>
-                <tr>
-                    <td>두번째글</td>
-                    <td>#Spring</td>
-                    <td>Jhkim</td>
-                    <td>2023-09-22</td>
+        </tr>
+        <tr>
+            <td>두번째글</td>
+            <td>#Spring</td>
+            <td>Jhkim</td>
+            <td>2023-09-22</td>
 
-                </tr>
-                <tr>
-                    <td>세번째글</td>
-                    <td>#HTML</td>
-                    <td>Jhkim</td>
-                    <td>2023-09-22</td>
-                </tr>
-            </tbody>
-        </table>
+        </tr>
+        <tr>
+            <td>세번째글</td>
+            <td>#HTML</td>
+            <td>Jhkim</td>
+            <td>2023-09-22</td>
+        </tr>
+        </tbody>
+    </table>
 
     <nav>
         <table>
@@ -76,6 +73,6 @@
         </table>
     </nav>
 </main>
-<footer id ="footer"></footer>
+<footer id="footer"></footer>
 </body>
 </html>

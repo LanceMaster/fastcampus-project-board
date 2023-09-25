@@ -23,7 +23,6 @@ repositories {
 }
 
 
-
 dependencies {
     /*spring boot*/
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
@@ -58,7 +57,7 @@ tasks.named('test') {
 }
 
 //querydsl Qclass
-def generated   = 'src/main/generated'
+def generated = 'src/main/generated'
 
 // querydsl Qclass 파일 생성 위치 변경
 tasks.withType(JavaCompile) {
@@ -66,7 +65,7 @@ tasks.withType(JavaCompile) {
 }
 // 추가된거 source set 개수 추가
 sourceSets {
-    main.java.srcDirs += [ generated ]
+    main.java.srcDirs += [generated]
 }
 // graidle clean시에 Quclass 딜렉토리 삭제
 clean {

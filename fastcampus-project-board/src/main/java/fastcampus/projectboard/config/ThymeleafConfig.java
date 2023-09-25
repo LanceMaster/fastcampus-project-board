@@ -1,4 +1,5 @@
 package fastcampus.projectboard.config;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -18,7 +19,7 @@ public class ThymeleafConfig {
     //원래 있던 thymelef를 가져와서
     {
         defaultTemplateResolver.setUseDecoupledLogic(thymeleaf3Properties.isDecoupledLogic());
-    //DecoupledLiogic 셋팅하고 그대로 return
+        //DecoupledLiogic 셋팅하고 그대로 return
         return defaultTemplateResolver;
     }
 

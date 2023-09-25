@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+<!--xmlns:th="http://www.thymeleaf.org"-->
 <head>
     <meta charset="UTF-8">
     <title>게시판 페이지</title>
 </head>
 <body>
-<header th:replace="header :: header"></header>
+<header id = "header"></header>
+<!--타임리프 탬플릿이기 때문에 그냥 html로 하면 안보인다.-->
+<!--decoupled로 인하여 가능하게 되었다. config -> ThymeleafConfig 참고-->
+<!--tymeleaf templete에 th.xml를 추가하여 htmlmarkup 언어로 바꾸었다.-->
+
+
+
+
+
 <main>
     <form>
     필터 : 제목 , 본문 ,id ,닉네임 ,해시태그
@@ -67,6 +76,6 @@
         </table>
     </nav>
 </main>
-<footer th:replace="footer :: footer"></footer>
+<footer id ="footer"></footer>
 </body>
 </html>

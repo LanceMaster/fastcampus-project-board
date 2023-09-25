@@ -1,10 +1,12 @@
 package fastcampus.projectboard.controller;
 
+import fastcampus.projectboard.config.SecurityConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -13,21 +15,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @DisplayName("View 컨트롤러")
+@Import(SecurityConfig.class) //securityConfig
 @WebMvcTest(ArticleController.class)
 //해당 컨트로러만 인식하여 족므더 가벼운상태로 가능하다.
 class ArticleControllerTest {
     private  final MockMvc mvc;
-
-    public ArticleControllerTest(@Autowired MockMvc mvc) {
-        this.mvc = mvc;
-    }
+    public ArticleControllerTest(@Autowired MockMvc mvc) {this.mvc = mvc;}
    //현재 build가 에러가 나서 disables를 추가
     @DisplayName("[View] [GET] 게시글 리스트(게시판 페이지) - 정상 호출")
     @Test
     public void givenNothing_whenRequestArticlesView_thenReturnArticlesView() throws Exception {
         //Given
-
-
         //When & Then
         mvc.perform(get("/articles")) //get stack
                 .andExpect(status().isOk()) //200 Ok

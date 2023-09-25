@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>게시판 페이지</title>
 </head>
-
 <body>
-
-헤더
-<header>
-    header 삽입부
-    <hr>
-</header>
+<header th:replace="header :: header"></header>
 <main>
     <form>
-    필터 : 제목 , 본문 ,id ,닉네임 ,해시테그
+    필터 : 제목 , 본문 ,id ,닉네임 ,해시태그
         <label for="search-type" hidden>유형</label>
         <select id ="search-type" name ="search-type">
             <option>제목</option>
@@ -56,7 +50,6 @@
                     <td>#HTML</td>
                     <td>Jhkim</td>
                     <td>2023-09-22</td>
-
                 </tr>
             </tbody>
         </table>
@@ -74,13 +67,6 @@
         </table>
     </nav>
 </main>
-
-<footer>
-    <hr>
-    footer 삽입
-</footer>
-
-
+<footer th:replace="footer :: footer"></footer>
 </body>
-
 </html>

@@ -40,6 +40,7 @@ dependencies {
     /*Thymeleaf*/
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
     //QueryDSL 설정
     implementation "com.querydsl:querydsl-jpa" //버전 spring dependecy 자동관리 생략
     implementation "com.querydsl:querydsl-core"

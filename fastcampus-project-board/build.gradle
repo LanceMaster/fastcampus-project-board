@@ -23,7 +23,6 @@ repositories {
 }
 
 
-
 dependencies {
     /*spring boot*/
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
@@ -36,10 +35,16 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
+    //Configuration processor tymeleaf3 decoupledlogic 추가
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     /*Thymeleaf*/
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    /*Security 설정*/
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
     //QueryDSL 설정
     implementation "com.querydsl:querydsl-jpa" //버전 spring dependecy 자동관리 생략
     implementation "com.querydsl:querydsl-core"
@@ -55,7 +60,7 @@ tasks.named('test') {
 }
 
 //querydsl Qclass
-def generated   = 'src/main/generated'
+def generated = 'src/main/generated'
 
 // querydsl Qclass 파일 생성 위치 변경
 tasks.withType(JavaCompile) {
@@ -63,7 +68,7 @@ tasks.withType(JavaCompile) {
 }
 // 추가된거 source set 개수 추가
 sourceSets {
-    main.java.srcDirs += [ generated ]
+    main.java.srcDirs += [generated]
 }
 // graidle clean시에 Quclass 딜렉토리 삭제
 clean {

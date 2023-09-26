@@ -6,17 +6,17 @@ management:
         include: "*"
 logging:
   level:
-    fastcampus.projectboard : debug
+    fastcampus.projectboard: debug
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
 
 spring:
   datasource:
 
-      url: jdbc:mysql://localhost:3306/board
-      username: jhk
-      password: tjmj367v
-      driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/board
+    username: jhk
+    password: tjmj367v
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 
   jpa:
@@ -33,4 +33,12 @@ spring:
       mode: always
   data.rest:
     base-path: /api
-    detection-strategy : annotated
+    detection-strategy: annotated
+
+  thymeleaf3:
+    decoupled-logic: true
+
+
+
+
+

@@ -3,7 +3,12 @@
 <!--xmlns:th="http://www.thymeleaf.org"-->
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name ="description" content="">
+    <meta name ="author" content="Junhee Kim">
     <title>게시글 페이지</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
 <header id="header"></header>
@@ -11,67 +16,84 @@
 <!--decoupled로 인하여 가능하게 되었다. config -> ThymeleafConfig 참고-->
 <!--tymeleaf templete에 th.xml를 추가하여 htmlmarkup 언어로 바꾸었다.-->
 
-<main>
-    <header>
-        <h1>첫번째 글</h1>
+<main class="container">
+    <header class="py-5 text-center" >
+        <h1>First Content</h1>
     </header>
     <!--어사이드 시멘틱태그 사용-->
+    <div class="row g-5">
+        <section class="col-md-5 col-lg-4 order-md-last">
+            <aside>
+                <p><span class="nickName">Jun</span> </p>
+                <p><a class="u-url" rel="me" href="mailto:ukirrer@gmail.com">jhk@mail.com</a></p>
+                <p><time datetime="2023-01-01T00:00:00">2023-01-01</time></p>
+                <p>#java</p>
+            </aside>
+        </section>
+        <!--BootStrap Feature-->
 
-    <aside>
-        <p>Junhee</p>
-        <p><a href="mailto:ukirrer@gmail.com">ukirrer@gmail.com</a></p>
-        <p>
-            <time datetime="2023-01-01T00:00:00">2023-01-01</time>
-        </p>
-        <p>#java</p>
-    </aside>
-
-    <section>
+    <article class="col-md-7 col-lg-8">
         <p>본문<br><br></p>
-        <div>
-            <form>
-                <label for="articleComment" hidden>댓글</label>
-                <textarea id="articleComment" placeholder="댓글 쓰기.."></textarea>
-                <button type="submit">쓰기</button>
+    </article>
+    </div>
 
+    <div class="row g-5">
+        <section>
+            <form class="row g-3">
+                <div class="col-8">
+                    <label for="comment-textbox" hidden>댓글</label>
+                    <textarea class="form-control" id="comment-textbox" placeholder="Comment." rows="3"></textarea>
+                </div>
+                <div class="col-auto">
+                    <label for="comment-submit" hidden>댓글 쓰기</label>
+                    <button class="btn btn-primary" id="comment-submit" type="submit">Write.</button>
+                </div>
             </form>
-
 
             <ul>
                 <li>
                     <div>
                         <time><small>2023-01-01</small></time>
-                        <strong>Junhee</strong>
-                        <p>
-                            Lorem Ipsum
-                            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                            velit..."
-                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
-                            because it is pain..."
-                        </p>
+                            <strong>Jhk</strong>
+                            <p>
+                            Test Comment<br>
+                            Test Comment
+                            </p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <time><small>2023-02-01</small></time>
-                        <strong>Junhee2</strong>
+                        <time><small>2023-01-01</small></time>
+                        <strong>Jhk</strong>
                         <p>
-                            Lorem Ipsum
-                            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                            velit..."
-                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
-                            because it is pain..."
+                            Test Comment<br>
+                            Test Comment
                         </p>
                     </div>
                 </li>
             </ul>
-        </div>
-        <nav class="page-pagination" role="navigation"></nav>
-        <a class="page-previous" href="#">이전 게시글</a>
-        <a class="page-next" href="#">다음 게시글</a>
-    </section>
+        </section>
+    </div>
 
+    <div class="row g-5">
+        <nav aria-label="Page Navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo; prev</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">next&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </main>
 <footer id="footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

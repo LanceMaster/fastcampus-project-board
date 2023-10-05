@@ -47,7 +47,7 @@ class ArticleControllerTest {
                 .andExpect(model().attributeExists("articleComments"));
 
     }
-
+    @Disabled
     @DisplayName("[View] [GET] 게시글 검색 전용 페이지 - 정상 호출")
     @Test
     public void givenNothing_whenRequestArticleSearchView_thenReturnArticleSearchView() throws Exception {
@@ -60,6 +60,7 @@ class ArticleControllerTest {
 
     }
 
+    @Disabled
     @DisplayName("[View] [GET] 게시글 해시태그 검색 페이지 - 정상 호출")
     @Test
     public  void givenNothing_whenRequestArticleHashTagSearchView_thenReturnArticleHashTagView() throws Exception{

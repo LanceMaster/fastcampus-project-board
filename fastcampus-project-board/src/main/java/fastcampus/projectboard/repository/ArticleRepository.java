@@ -17,13 +17,14 @@ import org.springframework.data.rest.webmvc.RepositoryRestController;
 public interface ArticleRepository extends
         JpaRepository<Article, Long>,
         QuerydslPredicateExecutor<Article>, //Entity
-        QuerydslBinderCustomizer<QArticle>{  //EntityPath
+        QuerydslBinderCustomizer<QArticle> {  //EntityPath
 
-    Page<Article> findByTitle(String title , Pageable pageable);
+    Page<Article> findByTitle(String title, Pageable pageable);
+
     @Override
     default void customize(QuerydslBindings bindings, QArticle root) {
         bindings.excludeUnlistedProperties(true);
-        bindings.including(root.title,root.content,root.hashtag,root.createdAt,root.createdBy);
+        bindings.including(root.title, root.content, root.hashtag, root.createdAt, root.createdBy);
         //bindings.bind(root.title).first(StringExpression::likeIgnoreCase);
         // like '${v}'
         bindings.bind(root.title).first(StringExpression::containsIgnoreCase);

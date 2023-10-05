@@ -20,7 +20,7 @@ public class ArticleService {
     private final ArticleRepository articleRepository;
 
     @Transactional(readOnly = true)
-    public Page<ArticleDto> searchArticles(SearchType searchType, String searchKeyword , Pageable pageable) {
+    public Page<ArticleDto> searchArticles(SearchType searchType, String searchKeyword, Pageable pageable) {
         return Page.empty();
     }
 

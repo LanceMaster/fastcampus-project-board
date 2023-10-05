@@ -14,7 +14,7 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface ArticleCommentRepository extends
-        JpaRepository<ArticleComment , Long>,
+        JpaRepository<ArticleComment, Long>,
         QuerydslPredicateExecutor<ArticleComment>,
         QuerydslBinderCustomizer<QArticleComment> {
 
@@ -23,9 +23,9 @@ public interface ArticleCommentRepository extends
     //게시글로 댓글을 구한다. _로 Id를 조회한다. Article의 아이디
 
     @Override
-    default  void customize(QuerydslBindings bindings , QArticleComment root) {
+    default void customize(QuerydslBindings bindings, QArticleComment root) {
         bindings.excludeUnlistedProperties(true);
-        bindings.including(root.content, root.createdAt , root.createdBy);
+        bindings.including(root.content, root.createdAt, root.createdBy);
         bindings.bind(root.content).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.createdAt).first(DateTimeExpression::eq);
         bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);

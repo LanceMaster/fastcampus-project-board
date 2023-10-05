@@ -3,6 +3,7 @@ package fastcampus.projectboard.domain;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Objects;
@@ -23,13 +24,16 @@ public class Article extends AuditingFields {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @ManyToOne(optional = false)
+    @Setter
+    @ManyToOne(optional = false)
     private UserAccount userAccount;
 
-    @Setter @Column(nullable = false)
+    @Setter
+    @Column(nullable = false)
     private String title; // 제목
 
-    @Setter @Column(nullable = false, length = 10000)
+    @Setter
+    @Column(nullable = false, length = 10000)
     private String content; // 본문
 
     @Setter
@@ -43,7 +47,7 @@ public class Article extends AuditingFields {
     protected Article() {
     }
 
-    private Article(UserAccount userAccount,String title, String content, String hashtag) {
+    private Article(UserAccount userAccount, String title, String content, String hashtag) {
         this.userAccount = userAccount;
         this.title = title;
         this.content = content;
@@ -51,7 +55,7 @@ public class Article extends AuditingFields {
     }
 
     public static Article of(UserAccount userAccount, String title, String content, String hashtag) {
-        return new Article(userAccount,title, content, hashtag);
+        return new Article(userAccount, title, content, hashtag);
     }
 
     @Override

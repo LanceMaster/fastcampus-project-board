@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class SecurityConfig  {
+public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

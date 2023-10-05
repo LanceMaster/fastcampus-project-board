@@ -1,6 +1,7 @@
 package fastcampus.projectboard.dto.response;
 
 import fastcampus.projectboard.dto.ArticleCommentDto;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
